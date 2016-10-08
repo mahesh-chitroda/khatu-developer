@@ -1,0 +1,6 @@
+B:\Company\Synechron\Projects\TypeScript\TypeScript\bin\TypeScript.dll.config
+B:\Company\Synechron\Projects\TypeScript\TypeScript\bin\TypeScript.dll
+B:\Company\Synechron\Projects\TypeScript\TypeScript\bin\TypeScript.pdb
+B:\Company\Synechron\Projects\TypeScript\TypeScript\obj\Debug\TypeScript.csprojResolveAssemblyReference.cache
+B:\Company\Synechron\Projects\TypeScript\TypeScript\obj\Debug\TypeScript.dll
+B:\Company\Synechron\Projects\TypeScript\TypeScript\obj\Debug\TypeScript.pdb
