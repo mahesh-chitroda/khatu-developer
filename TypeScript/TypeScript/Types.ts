@@ -16,7 +16,9 @@
         this.timerToken = setInterval(() => this.span.innerHTML = new Date().toUTCString(), 500);
     }
     SetNumber(numberExample: number, numberExampleElement: HTMLElement) {
-        numberExampleElement.innerHTML = numberExample.toLocaleString();
+        let numberType: number;
+        numberType = numberExample;
+        numberExampleElement.innerHTML = numberType.toLocaleString();
     }
     stop() {
         clearTimeout(this.timerToken);
@@ -27,6 +29,8 @@ window.onload = () => {
     let booleanExample = document.getElementById('booleanExample');
     let numberExample = document.getElementById('numberExample');
     var greeter = new Greeter(el, true, booleanExample);
-    greeter.SetNumber(10, numberExample);
+    //greeter.SetNumber(0b1010, numberExample);
+    greeter.SetNumber(0xf00d, numberExample);
+
     greeter.start();
 };
