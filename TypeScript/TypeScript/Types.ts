@@ -28,6 +28,12 @@
         stringExample.innerHTML = templateString;
     }
 
+    ArrayExample(arrayExample: any[], arrayElement: HTMLElement) {
+        let genericArray: Array<string> = arrayExample;
+        for (let i = 0; i < genericArray.length; i++) {
+            arrayElement.innerHTML += arrayExample[i] + "<br\>";
+        }
+    }
 
     stop() {
         clearTimeout(this.timerToken);
@@ -43,5 +49,8 @@ window.onload = () => {
 
     var stringExample = document.getElementById("stringExample");
     greeter.SetString("Mahesh Chitroda", stringExample);
+
+    var arrayElement = document.getElementById("ArrayExample");
+    greeter.ArrayExample([10, 20, 30, 40], arrayElement);
     greeter.start();
 };
