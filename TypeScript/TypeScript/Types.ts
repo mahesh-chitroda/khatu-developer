@@ -24,7 +24,7 @@
     SetString(stringType: string, stringExample: HTMLElement) {
         let templateString: string;
         //templateString = `This is Template string example :${stringType}`; // Using backtick
-        templateString = "This is Template string example :" + stringType; 
+        templateString = "This is Template string example :" + stringType;
         stringExample.innerHTML = templateString;
     }
 
@@ -32,6 +32,19 @@
         let genericArray: Array<string> = arrayExample;
         for (let i = 0; i < genericArray.length; i++) {
             arrayElement.innerHTML += arrayExample[i] + "<br\>";
+        }
+    }
+
+    TupleExample(tupleElement: HTMLElement) {
+        let tupleExample: [string, number];
+        tupleExample = ["Mahesh", 1];
+        tupleExample[2] = "Add new";
+        for (let i = 0; i < tupleExample.length; i++) {
+            tupleElement.innerHTML += tupleExample[i] + "<br\>";
+        }
+        tupleExample[2] = "Add Old";
+        for (let i = 0; i < tupleExample.length; i++) {
+            tupleElement.innerHTML += tupleExample[i] + "<br\>";
         }
     }
 
@@ -52,5 +65,8 @@ window.onload = () => {
 
     var arrayElement = document.getElementById("ArrayExample");
     greeter.ArrayExample([10, 20, 30, 40], arrayElement);
+
+    var tupleElement = document.getElementById("TupleExample");
+    greeter.TupleExample(tupleElement);
     greeter.start();
 };
