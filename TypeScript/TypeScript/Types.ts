@@ -20,6 +20,15 @@
         numberType = numberExample;
         numberExampleElement.innerHTML = numberType.toLocaleString();
     }
+
+    SetString(stringType: string, stringExample: HTMLElement) {
+        let templateString: string;
+        //templateString = `This is Template string example :${stringType}`; // Using backtick
+        templateString = "This is Template string example :" + stringType; 
+        stringExample.innerHTML = templateString;
+    }
+
+
     stop() {
         clearTimeout(this.timerToken);
     }
@@ -32,5 +41,7 @@ window.onload = () => {
     //greeter.SetNumber(0b1010, numberExample);
     greeter.SetNumber(0xf00d, numberExample);
 
+    var stringExample = document.getElementById("stringExample");
+    greeter.SetString("Mahesh Chitroda", stringExample);
     greeter.start();
 };
