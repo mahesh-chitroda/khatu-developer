@@ -1,8 +1,24 @@
-﻿class Greeter {
+﻿const enum MessageType { 
+    Success =1 ,
+    Failed,
+    Info   
+}
+//if we don't use const in enum then typescript generate below Javascript code 
+//var MessageType;
+//(function (MessageType) {
+//    MessageType[MessageType["Success"] = 1] = "Success";
+//    MessageType[MessageType["Failed"] = 2] = "Failed";
+//    MessageType[MessageType["Info"] = 3] = "Info";
+//})(MessageType || (MessageType = {}));
+//If we use const in enum then TS does not generate Javascript code but in this case you can not access
+// enum by index i.e : Messagetype[1]
+
+class Greeter {
     element: HTMLElement;
     span: HTMLElement;
     timerToken: number;
     numberValue: number;
+   
     constructor(element: HTMLElement, isAllow: boolean, booleanExample: HTMLElement) {
         booleanExample.innerHTML = isAllow.toLocaleString();
         this.element = element;
@@ -48,6 +64,11 @@
         }
     }
 
+    EnumExample(EnumElement: HTMLElement, MessageType: MessageType) {
+        EnumElement.innerHTML = MessageType.toLocaleString();
+    }
+
+
     stop() {
         clearTimeout(this.timerToken);
     }
@@ -68,5 +89,9 @@ window.onload = () => {
 
     var tupleElement = document.getElementById("TupleExample");
     greeter.TupleExample(tupleElement);
+
+    var EnumExample = document.getElementById("EnumExample");
+    greeter.EnumExample(EnumExample, MessageType.Failed);
+   // greeter.EnumExample(EnumExample, MessageType[1]);
     greeter.start();
 };
