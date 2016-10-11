@@ -1,7 +1,7 @@
-﻿const enum MessageType { 
-    Success =1 ,
+﻿const enum MessageType {
+    Success = 1,
     Failed,
-    Info   
+    Info
 }
 //if we don't use const in enum then typescript generate below Javascript code 
 //var MessageType;
@@ -18,7 +18,7 @@ class Greeter {
     span: HTMLElement;
     timerToken: number;
     numberValue: number;
-   
+
     constructor(element: HTMLElement, isAllow: boolean, booleanExample: HTMLElement) {
         booleanExample.innerHTML = isAllow.toLocaleString();
         this.element = element;
@@ -69,6 +69,20 @@ class Greeter {
     }
 
 
+    AnyExample(anyElement: HTMLElement, anyArray: any[]): void {
+        for (let i = 0; i < anyArray.length; i++) {
+            anyElement.innerHTML += anyArray[i] + "<br\>";
+        }
+        let undefinedValue: number;
+        undefinedValue = null;
+    }
+
+    TypeCastingExample(typeCastingElement: HTMLElement, value: any)
+    {
+        typeCastingElement.innerHTML = (value as string);
+        typeCastingElement.innerHTML = (<string>value);
+    }
+
     stop() {
         clearTimeout(this.timerToken);
     }
@@ -92,6 +106,14 @@ window.onload = () => {
 
     var EnumExample = document.getElementById("EnumExample");
     greeter.EnumExample(EnumExample, MessageType.Failed);
-   // greeter.EnumExample(EnumExample, MessageType[1]);
+    // greeter.EnumExample(EnumExample, MessageType[1]);
+
+
+    var AnyExample = document.getElementById("AnyExample");
+    greeter.AnyExample(AnyExample, [10, "Mahesh", 50.50]);
+
+    var TypeCastingExample = document.getElementById("TypeCastingExample");
+    greeter.TypeCastingExample(TypeCastingExample, 10);
+
     greeter.start();
 };
