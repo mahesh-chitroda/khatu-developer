@@ -20,6 +20,8 @@ class Greeter {
     numberValue: number;
 
     constructor(element: HTMLElement, isAllow: boolean, booleanExample: HTMLElement) {
+        let defualtvalue: number;
+        alert(defualtvalue)
         booleanExample.innerHTML = isAllow.toLocaleString();
         this.element = element;
         this.element.innerHTML += "The time is: ";
