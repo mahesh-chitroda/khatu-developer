@@ -24,10 +24,12 @@
   <ItemGroup>
     <Content Include="app.css" />
     <Content Include="Types.html" />
+    <Content Include="VariableScope.html" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Types.ts" />
+    <TypeScriptCompile Include="VariablesScope.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="tsconfig.json" />
