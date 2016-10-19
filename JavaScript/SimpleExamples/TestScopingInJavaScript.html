@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Scope Tests</title>
+	<script type="text/javascript">
+	var document=100;
+	document.write('Okay!!');
+		var no1=100;
+		if (true) {
+			var no2=100;
+		}
+		var result=no1+no2;
+		document.write(result);
+
+		for (var i = 0; i < 10; i++) {
+			var myLoopValue = i;
+		}
+		document.write(myLoopValue);
+		document.write("<br/>");
+
+		function Test1(){
+			var myMessage = "This is Scoping Topic!!";
+		}
+		document.write(myMessage);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

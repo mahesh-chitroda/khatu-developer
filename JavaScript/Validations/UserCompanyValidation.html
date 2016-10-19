@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Example</title>
+	<script type="text/javascript">
+		//Declare variable in JavaScript
+		var firstName = "Pravin", lastName="D.";
+		document.write("Full Name is - " + firstName + " " + lastName);
+		var no1=120,no2=230;
+
+		var addition=no1+no2;
+		var subtraction=no1-no2;
+		var multiplication=no1*no2;
+		var division=no1/no2;
+
+		document.write("Addition is - "+ addition + "<br/>");
+		document.write("Subtraction is - "+ subtraction + "<br/>");
+		document.write("Multiplication is - "+ multiplication + "<br/>");
+		document.write("Division is - "+ division + "<br/>");
+
+		var isCitizen=false;
+		if (isCitizen) {
+			document.write("Welcome come back to India !!");
+		}
+		else {
+			document.write("Welcome come back to USA !!");	
+		}
+
+	</script>
+</head>
+<body>
+	<form>
+		<input type="text" id="countryName" name="countryName">
+		<select id="chooseCountry" name="chooseCountry">
+			<option value="1">USA</option>
+			<option value="2">UK</option>
+			<option value="3">UAE</option>
+			<option value="4">UAC</option>
+		</select>
+		<button id="checkCountry" name="checkCountry" onclick="CheckCountryVisa()">Is Visa Open?</button>
+	</form>
+	<script type="text/javascript">
+		function CheckCountryVisa () {
+			 //var name=document.getElementById("chooseCountry");
+			 
+			 var name=document.querySelector('#chooseCountry');
+			 if (name.value==1) {
+			 	alert("USA")
+			 }
+			 else if(name.value==2){
+			 	alert("UK")
+			 }
+			 else if(name.value==3){
+			 	alert("UAE")
+			 }
+			 else if(name.value==4){
+			 	alert("UAC")
+			 }
+			 /*if (name.value.toLowerCase()=="usa") {
+			 	alert("Visa service is closed for this month");
+			 }
+			 else {
+			 	alert("Visa service is open for this month");
+			 }*/
+		}
+	</script>
+</body>
+</html>

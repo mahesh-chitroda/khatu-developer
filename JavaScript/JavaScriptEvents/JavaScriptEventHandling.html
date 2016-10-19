@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Event Handling!!</title>
+	<style type="text/css">
+		div{
+			background-color: red;
+			height: 300px;
+			width: 80%;
+			z-index: 10;
+		}
+		p{
+			background-color: green;
+			height: 150px;
+			width: 60%;
+			z-index: 20;
+			
+		}
+		span{
+			background-color: blue;
+			height: 100px;
+			width: 40%;
+			z-index: 30;
+		}
+	</style>
+	
+</head>
+<body>
+	<div id="div1">
+		<p id="p1">
+			<span id="s1">Welcome to Synechron Pvt. Ltd.</span>
+		</p>
+	</div>
+	<div id="div2">
+		<p id="p2">
+			<span id="s2">Welcome to Synechron Pvt. Ltd.</span>
+		</p>
+	</div>
+	<script type="text/javascript">
+		document.getElementById("div1").addEventListener("click",function(){
+			alert("Div - 1 is clicked!!");
+		},false);
+		document.getElementById("p1").addEventListener("click",function(e){
+			e.stopPropagation();
+			alert("Para - 1 is clicked!!");
+		},false);
+		document.getElementById("s1").addEventListener("click",function(){
+			alert("SPAN - 1 is clicked!!");
+		},false);
+
+		document.getElementById("div2").addEventListener("click",function(){
+			alert("Div - 2 is clicked!!");
+		},true);
+		document.getElementById("p2").addEventListener("click",function(e){
+			e.stopPropagation();
+			alert("Para - 2 is clicked!!");
+		},true);
+		document.getElementById("s2").addEventListener("click",function(){
+			alert("SPAN - 2 is clicked!!");
+		},true);
+	</script>
+</body>
+</html>

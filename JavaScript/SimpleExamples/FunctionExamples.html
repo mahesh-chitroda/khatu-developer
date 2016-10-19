@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+	<script type="text/javascript" src="Calculator.js"></script>
+</head>
+<body>
+	<input type="button" id="btnAddition" onClick="CallAddition(200,200)" value="Addition">
+	<input type="button" id="btnSubtraction" onClick="CallSubtraction(1000,200)" value="Subtraction">
+	<input type="button" id="btnMultiply" onClick="CallMultiplication(10,20)" value="Multiplication">
+	<input type="button" id="btnDivision" onClick="CallDivision(100,10)" value="Division">
+	<script type="text/javascript">
+	PhysicsCalculator.no1=200;
+	PhysicsCalculator.no2=100;
+		function CallAddition(no1,no2){
+			PhysicsCalculator.addition();
+			alert(result);
+			//alert(Addition(no1,no2));
+		}
+		function CallSubtraction(no1,no2){
+			PhysicsCalculator.subtraction();
+			alert(result);
+			//alert(Subtraction(no1,no2));
+		}
+		function CallMultiplication(no1,no2){
+			PhysicsCalculator.multiplication();
+			alert(result);
+			//alert(Multiplication(no1,no2));
+		}
+		function CallDivision(no1,no2){
+			PhysicsCalculator.division();
+			alert(result);
+			//alert(Division(no1,no2));
+		}
+	</script>
+</body>
+</html>

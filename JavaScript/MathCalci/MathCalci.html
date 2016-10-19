@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+	<script type="text/javascript" src="ExternalCalculations.js"></script>
+</head>
+<body>
+	<input type="text" id="no1" name="no1">
+	<input type="text" id="no2" name="no2">
+	<input type="text" id="result">
+	<hr>
+	<button id="btnAddition"> + </button>
+	<input type="button" id="btnSubtract" value=" - ">
+	<input type="button" id="btnMultiply" value=" * ">
+	<input type="button" id="btnDivision" value=" / ">
+	<script type="text/javascript">
+		document.getElementById("btnAddition").addEventListener("click",function(){
+				var no1 = document.getElementById("no1").value;
+				var no2 = document.getElementById("no2").value;
+				document.getElementById("result").value=Addition(parseInt(no1),parseInt(no2));
+			});
+		document.getElementById("btnSubtract").addEventListener("click",function(){
+				var no1 = document.getElementById("no1").value;
+				var no2 = document.getElementById("no2").value;
+				document.getElementById("result").value=Subtraction(parseInt(no1),parseInt(no2));
+			});
+		document.getElementById("btnMultiply").addEventListener("click",function(){
+				var no1 = document.getElementById("no1").value;
+				var no2 = document.getElementById("no2").value;
+				document.getElementById("result").value=Multiplication(parseInt(no1),parseInt(no2));
+			});
+		document.getElementById("btnDivision").addEventListener("click",function(){
+				var no1 = document.getElementById("no1").value;
+				var no2 = document.getElementById("no2").value;
+				document.getElementById("result").value=Division(parseInt(no1),parseInt(no2));
+			});
+	</script>
+</body>
+</html>

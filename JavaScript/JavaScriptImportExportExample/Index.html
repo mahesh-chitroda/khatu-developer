@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>India Sales</title>
+	<script type="text/javascript" src="SalesCalculations.js.js"></script>
+	<script type="text/javascript" src="IndiaSales.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		var sales=new IndianProductsSales();
+		sales.COGS = 12000;
+		sales.Expense = 13000;
+		sales.ActualSales = 145000;
+
+		var profit = sales.IndiaSalesNetProfit();
+		document.write('Indian Sales Net Profit is - INR ' + profit);
+	</script>
+</body>
+</html>

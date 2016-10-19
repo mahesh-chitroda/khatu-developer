@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        window.document.write("Welcome!!");
+        var window=100;
+        window.document.write("Welcome back again!!");
+        //var window=100;
+        if (true) {
+            var x = 100;
+        }
+        else {
+            x = 1000;
+        }
+        function trainerName(firstName) {
+            var nameIntro = "This Trainer Name is ";
+            function lastName(theLastName) {
+                return nameIntro + firstName + " " + theLastName;
+                //return nameIntro + " " + theLastName;       
+            }
+            return lastName;
+        }
+        
+        var trainer = trainerName("Pravinkumar");
+        var output = trainer("Dabade");
+        console.log(output);
+    </script>
+</body>
+</html>

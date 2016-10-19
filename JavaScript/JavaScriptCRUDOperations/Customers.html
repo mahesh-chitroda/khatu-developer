@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Customers Profile</title>
+	<link rel="stylesheet" type="text/css" href="Styles/bootstrap.css">
+	<script type="text/javascript" src="Scripts/CustomerOperations.js"></script>
+</head>
+<body>
+	<h1 style="text-align:center;">Synechron Customer Profile</h1>
+	<hr>
+	<form class="form-horizontal">
+		<div class="form-group">
+			<label class="col-lg-2 control-label">Customer ID</label>
+			<div class="col-lg-8">
+				<input type="text" name="customerId" id="customerId" class="form-control" autofocus placeholder="Enter your Customer ID !!" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label">Contact Name</label>
+			<div class="col-lg-8">
+				<input type="text" name="contactName" id="contactName" class="form-control" placeholder="Enter your Contact Name !!" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label">City</label>
+			<div class="col-lg-8">
+				<input type="text" name="city" id="city" class="form-control" placeholder="Enter your living city name !!" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label">EMail</label>
+			<div class="col-lg-8">
+				<input type="email" name="email" id="email" class="form-control" placeholder="Enter your EMail ID !!" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label">Contact #</label>
+			<div class="col-lg-8">
+				<input type="text" name="contactNo" id="contactNo" class="form-control" placeholder="Enter your Contact # !!" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-lg-12" style="text-align:center;">
+				<input type="button" id="submit" value="Submit Profile" class="btn btn-primary" onClick="NewModifyCustomer()">
+				<input type="reset" value="Reset Profile" class="btn btn-default">
+			</div>
+		</div>
+	</form>
+	<hr>
+	<table class="table" id="customersTable">
+			<thead>
+				<th>Customer ID</th>
+				<th>Contact Name</th>
+				<th>City</th>
+				<th>EMail ID</th>
+				<th>Contact #</th>
+				<th>Modify</th>
+				<th>Remove</th>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+	<script type="text/javascript">
+		var customer = new Customer();
+		function DisplayCustomersTable(){
+			var customers = customer.getAllCustomers();
+			var table = document.getElementById('customersTable');
+			var rows = table.rows.length;
+
+	        for (var i = rows - 1; i > 0; i--) {
+	            table.deleteRow(i);
+	        }
+		    for (var i = 0; i < customers.length; i++)
+		    {
+		        var row = table.insertRow(i + 1);
+		        var cell1 = row.insertCell(0);
+		        var cell2 = row.insertCell(1);
+		        var cell3 = row.insertCell(2);
+		        var cell4 = row.insertCell(3);
+		        var cell5 = row.insertCell(4);
+		        var cell6 = row.insertCell(5);
+		        var cell7 = row.insertCell(6);
+
+		        cell1.innerHTML = customers[i].customerId;
+		        cell2.innerHTML = customers[i].contactName;
+		        cell3.innerHTML = customers[i].city;
+		        cell4.innerHTML = customers[i].email;
+		        cell5.innerHTML = customers[i].contactNo;
+		        cell6.innerHTML = "<input type='button' value='Modify' id='" +customers[i].contactNo + "' class='btn btn-primary' onClick='modifyCurrentRow(this)' data-index='"+ i + "'>";
+		        cell7.innerHTML = "<input type='button' value='Delete' id='" +customers[i].contactNo + "' class='btn btn-primary' onClick='deleteCurrentRow(this)'>";
+			}
+		};
+		DisplayCustomersTable();
+		function NewModifyCustomer(){
+			var customers = customer.getAllCustomers();
+			var submitButtonText = document.getElementById('submit').value;
+			var customerProfile = {
+					customerId: document.getElementById('customerId').value,
+					contactName: document.getElementById('contactName').value,
+					city: document.getElementById('city').value,
+					email: document.getElementById('email').value,
+					contactNo: document.getElementById('contactNo').value
+				};
+			if (submitButtonText == "Submit Profile") {
+				customer.addNewCustomer(customerProfile);
+			}
+			else{
+				var index=customers.indexOf(oldCustomer);
+				customers[index]=customerProfile;
+				document.getElementById('submit').value = "Submit Profile";
+			}
+			DisplayCustomersTable();
+		};
+		var oldCustomer;
+		function modifyCurrentRow(row){
+			var customers = customer.getAllCustomers();
+			for (var i = 0; i < customers.length; i++) {
+				if (customers[i].contactNo == row.id) {
+					oldCustomer = customers[i];
+					console.log(oldCustomer);
+				}
+			}
+			document.getElementById('customerId').value = oldCustomer.customerId;
+			document.getElementById('contactName').value = oldCustomer.contactName;
+			document.getElementById('city').value = oldCustomer.city;
+			document.getElementById('email').value = oldCustomer.email;
+			document.getElementById('contactNo').value = oldCustomer.contactNo;
+			document.getElementById('submit').value = "Modify Profile";
+		}
+	</script>
+</body>
+</html>

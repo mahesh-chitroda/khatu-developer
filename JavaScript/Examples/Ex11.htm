@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+        function NoToolBar() {
+            window.open("Ex10.htm","name","toolbar=no");
+         }
+    </script>
+</head>
+<body>
+<script type="text/javascript">
+   function CheckHistory() {
+        
+            lbl.innerHTML=history.length
+        }
+document.writeln("<p>Browser CodeName: " + navigator.appCodeName + "</p>");
+document.writeln("<p>Browser Name: " + navigator.appName + "</p>");
+document.writeln("<p>Browser Version: " + navigator.appVersion + "</p>");
+document.writeln("<p>Cookies Enabled: " + navigator.cookieEnabled + "</p>");
+document.writeln("<p>Platform: " + navigator.platform + "</p>");
+document.writeln("<p>User-agent header: " + navigator.userAgent + "</p>");
+</script>
+<p id="lbl" />
+<a href="" onclick="NoToolBar()">Click here to See News</a>
+
+    <input id="Button1" type="button" value="Print History" onclick="CheckHistory()" />
+
+</body>
+</html>

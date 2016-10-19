@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Display Names From Array</title>
+	<script type="text/javascript" src="EmployeeData.js"></script>
+</head>
+<body>
+	<table id="employeeTable" border="1">
+		<tr>
+			<th>Employee ID</th>
+			<th>Employee Name</th>
+			<th>City</th>
+			<th>EMail</th>
+			<th>Contact #</th>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		var empNames = document.getElementById("employeeTable");
+		for (var i = 0; i < employeeNames.length; i++) {
+			var row = empNames.insertRow(i + 1);
+		    var cell1 = row.insertCell(0);
+		    var cell2 = row.insertCell(1);
+		    var cell3 = row.insertCell(2);
+		    var cell4 = row.insertCell(3);
+		    var cell5 = row.insertCell(4);
+		    cell1.innerHTML = employeeNames[i].employeeId;
+		    cell2.innerHTML = employeeNames[i].employeeName;
+		    cell3.innerHTML = employeeNames[i].city;
+		    cell4.innerHTML = employeeNames[i].email;
+		    cell5.innerHTML = employeeNames[i].contactNo;
+		}
+	</script>
+</body>
+</html>

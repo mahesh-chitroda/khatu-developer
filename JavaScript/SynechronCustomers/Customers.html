@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Customers Profile</title>
+	<link rel="stylesheet" type="text/css" href="Styles/bootstrap.css">
+	<script type="text/javascript" src="Scripts/CustomerOperations.js"></script>
+</head>
+<body>
+	<h1 style="text-align:center;">Synechron Customer Profile</h1>
+	<hr>
+	<form class="form-horizontal">
+		<div class="form-group">
+			<label class="col-lg-2 control-label">Customer ID</label>
+			<div class="col-lg-8">
+				<input type="text" name="customerId" id="customerId" class="form-control" autofocus placeholder="Enter your Customer ID !!" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label">Contact Name</label>
+			<div class="col-lg-8">
+				<input type="text" name="contactName" id="contactName" class="form-control" placeholder="Enter your Contact Name !!" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label">City</label>
+			<div class="col-lg-8">
+				<input type="text" name="city" id="city" class="form-control" placeholder="Enter your living city name !!" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label">EMail</label>
+			<div class="col-lg-8">
+				<input type="email" name="email" id="email" class="form-control" placeholder="Enter your EMail ID !!" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label">Contact #</label>
+			<div class="col-lg-8">
+				<input type="text" name="contactNo" id="contactNo" class="form-control" placeholder="Enter your Contact # !!" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-lg-12" style="text-align:center;">
+				<input type="button" value="Submit Profile" class="btn btn-primary" onClick="NewCustomer()">
+				<input type="reset" value="Reset Profile" class="btn btn-default">
+			</div>
+		</div>
+	</form>
+	<script type="text/javascript">
+		function NewCustomer(){
+			var customerid = document.getElementById('customerId').value;
+			var customername = document.getElementById('contactName').value;
+			var city = document.getElementById('city').value;
+			var email = document.getElementById('email').value;
+			var contactno = document.getElementById('contactNo').value;
+
+			//Test Customer operations
+			insertCustomerDetails(customerid,customername,city,email,contactno);
+			for (var i = 0; i < customersList.length; i++) {
+				alert(customersList[i].contactName);
+			};
+		}
+	</script>
+</body>
+</html>

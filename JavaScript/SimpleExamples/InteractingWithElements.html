@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Element Interactions</title>
+	
+</head>
+<body>
+	<h1 id="title">Welcome To Synechron Pvt. Ltd.</h1>
+	<h2 id="platform"></h2>
+	<input type="button" value="Change Title" id="btnChangeTitle" onClick="ChangeCompanyTitle()">
+	<input type="button" value="Show Platform" id="btnShowPlatform">
+	<script type="text/javascript">
+		//window.onLoad()
+		//document.getElementById('title').innerHTML="Welcome To Syenchron USA Pvt. Ltd.";
+		function ChangeCompanyTitle(){
+			document.getElementById('title').innerHTML="Welcome To Synechron USA Pvt. Ltd.";
+		}
+		document.getElementById('btnShowPlatform').addEventListener('click',function(){
+				document.getElementById('platform').innerHTML="Synechron is using Multiple Platforms - Microsoft, Sun, IoS etc. !!";
+		});
+	</script>
+</body>
+</html>

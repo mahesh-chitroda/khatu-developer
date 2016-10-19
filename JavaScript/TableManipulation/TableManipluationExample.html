@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Stripped Table Example !</title>
+	<style type="text/css">
+		table{
+			width: 100%;
+			text-align: center;
+		}
+		.evenRows{
+			background-color: green;
+			color: white;
+		}
+		.oddRows{
+			background-color: blue;
+			color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<h1>Welcome To Employee's List</h1>
+	<hr>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Employee ID</th>
+				<th>Employee Name</th>
+				<th>Employee City</th>
+				<th>Contact No.</th>
+			</tr>
+		</thead>
+		<tbody id="synEmployee">
+			<tr>
+				<td>12443</td>
+				<td>Pravinkumar R. D.</td>
+				<td>Pune</td>
+				<td>27382388</td>
+			</tr>
+			<tr>
+				<td>34345</td>
+				<td>Anjala Johns</td>
+				<td>New York</td>
+				<td>67675666</td>
+			</tr>
+			<tr>
+				<td>45445</td>
+				<td>Martina Hingis</td>
+				<td>New York</td>
+				<td>34345555</td>
+			</tr>
+			<tr>
+				<td>545455</td>
+				<td>John Richard</td>
+				<td>London</td>
+				<td>34887888</td>
+			</tr>
+		</tbody>
+	</table>
+	<script type="text/javascript">
+		var tableData=document.querySelector('#synEmployee');
+		var evenRows=tableData.querySelectorAll('tr:nth-child(even)');
+		var oddRows=tableData.querySelectorAll('tr:nth-child(odd)');
+		for (var i = 0; i < evenRows.length; i++) {
+			evenRows[i].className="evenRows";
+		}
+		for (var i = 0; i < oddRows.length; i++) {
+			oddRows[i].className="oddRows";
+		}
+	</script>
+</body>
+</html>

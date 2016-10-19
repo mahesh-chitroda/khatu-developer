@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Finding Numbers</title>
+</head>
+
+<body>
+	<script>
+        var str1="Welcome To 100 years old consultancy firm!!";
+        var str2="Total number of employees are - 34244";
+        var str3=str1+str2;
+        var pattern1=/\d\d\d/;
+        console.log(str1.match(pattern1));
+        var pattern2=/\d{3}/;
+        console.log(str1.match(pattern2));
+        var pattern3=/\d{3,5}/;
+        console.log(str2.match(pattern3));
+        var pattern4=/\d/g;
+        console.log(str3.match(pattern4));
+    </script>
+</body>
+
+</html>

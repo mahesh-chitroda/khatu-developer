@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Avoid Global Namespace Pollution</title>
+	<script type="text/javascript">
+		var Chemistry = Chemistry || {};
+		var Physics = Physics || {};
+		Chemistry.Addition = function(no1,no2){
+			return no1 + no2;
+		}
+		Physics.Addition = function(no1,no2,no3){
+			return no1 + no2 + no3 - 100;
+		}
+		document.write(Chemistry.Addition(100,200));
+		document.write(Physics.Addition(100,200,300));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

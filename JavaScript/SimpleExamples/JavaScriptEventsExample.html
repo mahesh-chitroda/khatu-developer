@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Events - Bubbling and Tunneling</title>
+	<style type="text/css">
+		div{
+			height: 200px;
+			width: 300px;
+			background-color: green;
+			z-index: 1;
+		}
+		p{
+			height: 150px;
+			width: 200px;
+			background-color: red;
+			z-index: 2;
+		}
+		span{
+			height: 100px;
+			width: 100px;
+			background-color: Blue;
+			z-index: 3;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1">
+		<p id="p1">
+			<span id="s1">
+				I am SPAN Tag
+			</span>
+		</p>
+	</div>
+	<div id="div2">
+		<p id="p2">
+			<span id="s2">
+				I am SPAN Tag
+			</span>
+		</p>
+	</div>
+	<script type="text/javascript">
+		document.getElementById('div1').addEventListener('click',function(){alert('Div 1 is clicked !!');},false);
+		document.getElementById('p1').addEventListener('click',function(){alert('Paragraph 1 is clicked !!');},false);
+		document.getElementById('s1').addEventListener('click',function(){alert('SPAN 1 is clicked !!');},false);
+
+		document.getElementById('div2').addEventListener('click',function(){alert('Div 2 is clicked !!');},true);
+		document.getElementById('p2').addEventListener('click',function(){alert('Paragraph 2 is clicked !!');},true);
+		document.getElementById('s2').addEventListener('click',function(){alert('SPAN 2 is clicked !!');},true);
+	</script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lunch Menu</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<style type="text/css">
+	.displayMenu{
+		display: none;
+	}
+	</style>
+</head>
+<body>
+	<h1>Today's Menu</h1>
+	<hr>
+		<div class="row">
+			<div class="col-md-6">
+				<select id="lunch" class="form-control">
+					<option value="Chinese">Chinese</option>
+					<option value="Indian">Indian</option>
+					<option value="Italian">Italian</option>
+					<option value="Japanese">Japanese</option>
+				</select>
+			</div>
+			<div class="col-md-6">
+				<button id="ShowMenu" onclick="ShowMenu()" class="btn btn-success">Show Menu</button>
+			</div>
+		</div>
+	<hr>
+	<div id="tables">
+	<table id="chineseTable" class="table">
+		<thead>
+			<tr>
+				<th>Menu ID</th>
+				<th>Item Name</th>
+				<th>Price $</th>
+				<th>Order Now!</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>12443</td>
+				<td>Hongkong Rice</td>
+				<td>$ 110</td>
+				<td><a href="#" class="btn btn-primary">Place an Order</a> </td>
+			</tr>
+			<tr>
+				<td>12444</td>
+				<td>Chinese Fried Rice</td>
+				<td>$ 140</td>
+				<td><a href="#" class="btn btn-primary">Place an Order</a> </td>
+			</tr>
+			<tr>
+				<td>12445</td>
+				<td>Singapore Rice</td>
+				<td>$ 120</td>
+				<td><a href="#" class="btn btn-primary">Place an Order</a> </td>
+			</tr>
+			<tr>
+				<td>12446</td>
+				<td>Singapore Curry</td>
+				<td>$ 50</td>
+				<td><a href="#" class="btn btn-primary">Place an Order</a> </td>
+			</tr>
+		</tbody>
+	</table>
+	<table id="japaneseTable" class="table">
+		<thead>
+			<tr>
+				<th>Menu ID</th>
+				<th>Item Name</th>
+				<th>Price $</th>
+				<th>Order Now!</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>12443</td>
+				<td>Rice Cake</td>
+				<td>$ 110</td>
+				<td><a href="#" class="btn btn-primary">Place an Order</a> </td>
+			</tr>
+			<tr>
+				<td>12444</td>
+				<td>Japanese Rice</td>
+				<td>$ 140</td>
+				<td><a href="#" class="btn btn-primary">Place an Order</a> </td>
+			</tr>
+			<tr>
+				<td>12445</td>
+				<td>Singapore Rice</td>
+				<td>$ 120</td>
+				<td><a href="#" class="btn btn-primary">Place an Order</a> </td>
+			</tr>
+			<tr>
+				<td>12446</td>
+				<td>Singapore Curry</td>
+				<td>$ 50</td>
+				<td><a href="#" class="btn btn-primary">Place an Order</a> </td>
+			</tr>
+		</tbody>
+	</table>
+	<table id="italianTable" class="table">
+		<thead>
+			<tr>
+				<th>Menu ID</th>
+				<th>Item Name</th>
+				<th>Price $</th>
+				<th>Order Now!</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>12443</td>
+				<td>Hongkong Rice</td>
+				<td>$ 110</td>
+				<td><a href="#" class="btn btn-primary">Place an Order</a> </td>
+			</tr>
+			<tr>
+				<td>12444</td>
+				<td>Chinese Fried Rice</td>
+				<td>$ 140</td>
+				<td><a href="#" class="btn btn-primary">Place an Order</a> </td>
+			</tr>
+			<tr>
+				<td>12445</td>
+				<td>Singapore Rice</td>
+				<td>$ 120</td>
+				<td><a href="#" class="btn btn-primary">Place an Order</a> </td>
+			</tr>
+			<tr>
+				<td>12446</td>
+				<td>Singapore Curry</td>
+				<td>$ 50</td>
+				<td><a href="#" class="btn btn-primary">Place an Order</a> </td>
+			</tr>
+		</tbody>
+	</table>
+	<table id="indianTable" class="table">
+		<thead>
+			<tr>
+				<th>Menu ID</th>
+				<th>Item Name</th>
+				<th>Price $</th>
+				<th>Order Now!</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>12443</td>
+				<td>Hongkong Rice</td>
+				<td>$ 110</td>
+				<td><a href="#" class="btn btn-primary">Place an Order</a> </td>
+			</tr>
+			<tr>
+				<td>12444</td>
+				<td>Chinese Fried Rice</td>
+				<td>$ 140</td>
+				<td><a href="#" class="btn btn-primary">Place an Order</a> </td>
+			</tr>
+			<tr>
+				<td>12445</td>
+				<td>Singapore Rice</td>
+				<td>$ 120</td>
+				<td><a href="#" class="btn btn-primary">Place an Order</a> </td>
+			</tr>
+			<tr>
+				<td>12446</td>
+				<td>Singapore Curry</td>
+				<td>$ 50</td>
+				<td><a href="#" class="btn btn-primary">Place an Order</a> </td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	<script type="text/javascript">
+		var chiTable = document.getElementById("chineseTable");
+		chiTable.classList.add('displayMenu');
+		var japTable = document.getElementById("japaneseTable");
+		japTable.classList.add("displayMenu");
+		var itaTable = document.getElementById("italianTable");
+		itaTable.classList.add("displayMenu");
+		var indTable = document.getElementById("indianTable");
+		indTable.classList.add("displayMenu");
+		function HideLunchItems()
+		{
+			chiTable.classList.add('displayMenu');
+			japTable.classList.add("displayMenu");
+			itaTable.classList.add("displayMenu");
+			indTable.classList.add("displayMenu");
+		}
+		HideLunchItems();
+		function ShowMenu () {
+			HideLunchItems();
+			var menu = document.querySelector('#lunch');
+			switch (menu.value) {
+	            case "Chinese":
+	             	chiTable.classList.remove('displayMenu');
+	                break;
+	            case "Indian":
+	                indTable.classList.remove('displayMenu');
+	                break;
+	            case "Italian":
+	                itaTable.classList.remove('displayMenu');
+	                break;
+                case "Japanese":
+                	japTable.classList.remove('displayMenu');
+                	break;
+	            default:
+	                document.write("Please make a choice of your lunch Menu !!");
+	        }
+		}
+	</script>
+</body>
+</html>

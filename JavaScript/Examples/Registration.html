@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+        function ValidateBlankOrNull() {
+            var name = document.getElementById("txtCustomerName");
+            alert(name.value);
+            if (name.value!="") {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="Ex9.htm" method="post" onsubmit="return ValidateBlankOrNull()">
+        <input type="text" name="txtCustomerName" id="txtCustomerName" value="" />
+        <input type="text" name="txtCustomerAddress" id="txtCustomerAddress" value="" />
+        <input type="text" name="txtCustomerCity" id="txtCustomerCity" value="" />
+        <input type="text" name="txtCustomerCountry" id="txtCustomerCountry" value="" />
+        <input type="submit" name="btnSubmit" value="Submit Form" />
+    </form>
+</body>
+</html>

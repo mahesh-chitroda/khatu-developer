@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Employees Data Screen</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<script type="text/javascript" src="EmployeeClass.js"></script>
+</head>
+
+<body>
+	<h1>Employee Data Entry Form</h1>
+	<hr>
+	<form class="form-horizontal">
+		<div class="form-group">
+			<label class="col-lg-2 control-label">First Name</label>
+			<div class="col-lg-8">
+				<input type="text" name="fname" id="fname" class="form-control" autofocus placeholder="Enter your first name !!" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label">Last Name</label>
+			<div class="col-lg-8">
+				<input type="text" name="lname" id="lname" class="form-control" placeholder="Enter your last name !!" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label">eMail</label>
+			<div class="col-lg-8">
+				<input type="email" name="email" id="email" class="form-control" placeholder="Enter your EMail ID !!" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label">Contact #</label>
+			<div class="col-lg-8">
+				<input type="tel" name="contactNo" id="contactNo" class="form-control" placeholder="Enter your Contact # !!" required>
+			</div>
+		</div>
+		<div class="form-group" style="text-align:center;">
+			<input type="submit" value="Submit Form" class="btn btn-success" id="submit">
+			<input type="reset" value="Reset Form" class="btn btn-danger">
+		</div>
+	</form>
+	<hr>
+	<table class="table" id="employeesTable">
+		<thead>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Contact #</th>
+			<th>EMail ID</th>
+			<th>Modify</th>
+			<th>Remove</th>
+		</thead>
+		<tbody>
+
+		</tbody>
+	</table>
+	<script type="text/javascript">
+			var submitButton = document.getElementById("submit");
+			submitButton.addEventListener("click", function(e){
+					e.preventDefault();
+					var fname=document.getElementById("fname").value;
+					var lname=document.getElementById("lname").value;
+					var cno=document.getElementById("contactNo").value;
+					var email=document.getElementById("email").value;
+					if (submitButton.value==="Submit Form") {
+						newEmployee(fname,lname,cno,email);
+						employeesTableDisplay();
+					}
+					else if (submitButton.value==="Modify Form") {
+						console.log('Modify Button Clicked')
+						modifyCurrentEmployee(fname,lname,cno,email);
+						employeesTableDisplay();
+						submitButton.value = "Submit Form";
+					}
+			});
+			var employeesTableDisplay = function(){
+				var employees = displayEmployees();
+				var table = document.querySelector('#employeesTable');
+				var rows = table.rows.length;
+
+		        for (var i = rows - 1; i > 0; i--) {
+		            table.deleteRow(i);
+		        }
+			    for (var i = 0; i < employees.length; i++)
+			    {
+			        var row = table.insertRow(i + 1);
+			        var cell1 = row.insertCell(0);
+			        var cell2 = row.insertCell(1);
+			        var cell3 = row.insertCell(2);
+			        var cell4 = row.insertCell(3);
+			        var cell5 = row.insertCell(4);
+			        var cell6 = row.insertCell(5);
+
+			        cell1.innerHTML = employees[i].firstName;
+			        cell2.innerHTML = employees[i].lastName;
+			        cell3.innerHTML = employees[i].contactNo;
+			        cell4.innerHTML = employees[i].email;
+			        cell5.innerHTML = "<input type='button' value='Modify' id='" +employees[i].email + "' class='btn btn-primary' onClick='modifyCurrentRow(this)' data-index='"+ i + "'>";
+			        cell6.innerHTML = "<input type='button' value='Delete' id='" +employees[i].email + "' class='btn btn-primary' onClick='deleteCurrentRow(this)'>";
+				}
+			};
+			function deleteCurrentRow (crow) {
+				 var currentEmployee = deleteCurrentEmployee(crow.id);
+				 employeesTableDisplay();
+			}
+			function modifyCurrentRow (crow) {
+				var currentEmployee = displaySingleEmployee(crow.id);
+				document.getElementById("fname").value = currentEmployee.firstName;
+				document.getElementById("lname").value = currentEmployee.lastName;;
+				document.getElementById("contactNo").value =currentEmployee.contactNo;
+				document.getElementById("email").value =currentEmployee.email;
+				submitButton.value = "Modify Form";
+			}
+		</script>
+</body>
+
+</html>

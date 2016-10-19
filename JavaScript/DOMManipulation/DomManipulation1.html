@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM Manipulation !!</title>
+	<style type="text/css">
+		.odd{
+			background-color: #000066;
+			color: #fff;
+		}
+		.even{
+			background-color: yellow;
+			color: blue;	
+		}
+		div{
+			height: 30px;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div id="firstDiv">First Div Tag !!</div>
+	<div id="secondDiv">Second Div Tag !!</div>
+	<div id="thirdDiv">Third Div Tag !!</div>
+	<div id="forthDiv">Forth Div Tag !!</div>
+	<div id="fifthDiv">Fifth Div Tag !!</div>
+	<div id="sixthDiv">Sixth Div Tag !!</div>
+	<script type="text/javascript">
+		//var div = document.getElementById("firstDiv");
+		//var divs = document.getElementsByTagName('div');
+		//var divs=document.querySelectorAll('div');
+		var divs=document.querySelectorAll('div:nth-child(3)');
+		for (var i = 0; i < divs.length; i++) {
+			//if (i%2==0) {
+				divs[i].className="even";
+			//}
+			//else {
+			//	divs[i].className="odd";
+			//}
+		};
+		
+	</script>
+</body>
+</html>

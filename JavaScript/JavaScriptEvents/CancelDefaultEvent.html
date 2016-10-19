@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cancel Default Event !!</title>
+</head>
+<body>
+	<p id="msg">
+		
+	</p>
+	<a href="http://www.google.co.in" id="link1">Click Me To See the Message!!</a>
+	<script type="text/javascript">
+		document.getElementById("link1").addEventListener("click", function(e){
+				e.preventDefault();
+				document.getElementById("msg").innerHTML="Hi! How are you";
+		});
+	</script>
+</body>
+</html>
