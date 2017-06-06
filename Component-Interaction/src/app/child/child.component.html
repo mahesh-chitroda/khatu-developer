@@ -1,0 +1,9 @@
+<p>Child data count {{localData.length}}</p>
+<button (click)="AccessLocalData();"><b> Click On Me </b></button>
+  <ul>
+    <li *ngFor='let info of localData'>
+      {{info.title}}
+    </li>
+  </ul>
+
+  
