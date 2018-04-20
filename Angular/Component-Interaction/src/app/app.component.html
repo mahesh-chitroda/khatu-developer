@@ -1,0 +1,29 @@
+<p class="x">
+   Parent
+</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <p>List</p>
+    </div>
+  </div>
+  <div class="row hand-icon" *ngFor='let user of userList' (click)='ShowUserDetails(user);'>
+    <div class="col-lg-1">{{user.Name}}</div>
+    <div class="col-lg-4">{{user.PhoneNumber}}</div>
+  </div>
+
+  <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <button (click)='child.childEventCallByParent();' class="parent-color" >Call Child Method By Parent</button>
+        <button (click)='childEventCallByParentViewChild();' >Call Child Method By Parent Using View Child</button>
+     </div>
+  </div>
+
+
+  <div class="row div-padding-top">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <app-child [UserDetails]='userDetails' #child (saveDetails)='saveDetails($event);' ></app-child>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,12 @@
+
+.parent-color {
+    color: blue;
+}
+
+:host {
+    background-color: red;
+    color: green;
+}
+.x {
+    color: red;
+}
